@@ -1,3 +1,4 @@
+#ReactJS App With Docker 
 
 ### Run Application Locally
 
@@ -7,7 +8,7 @@ PORT=3009
 </pre>
 
 Run locally
-</pre>
+<pre>
 Johns-MBP:rental-react-app admin$ npm start
 
 Compiled successfully!
@@ -20,7 +21,7 @@ You can now view rental-react-app in the browser.
 Note that the development build is not optimized.
 To create a production build, use npm run build.
 
-<pre>
+</pre>
 
 ### Run Application In Docker Container
 Build the docker container
