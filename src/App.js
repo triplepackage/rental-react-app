@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
+import {Doughnut} from 'react-chartjs-2';
 
 class App extends Component {
   constructor(props) {
@@ -8,6 +9,8 @@ class App extends Component {
 
     this.state = {
       data: [],
+      groupedData: [],
+      characterData: [],
     };
   }
 
@@ -33,20 +36,32 @@ class App extends Component {
     }];
 
   componentDidMount() {
-    fetch('http://localhost:8080/api/rentals/street/hallview')
+    fetch('http://127.0.0.1:8080/api/rentals/city/nottingham')
     .then(response => response.json())
     .then(data => this.setState({ data }));
+
+    fetch('http://127.0.0.1:8080/api/rentals/groupedby/city')
+    .then(response => response.json())
+    .then(groupedData => {
+      const characters = groupedData;
+      let characterData = [];
+      characters.forEach(function(character) {
+        characterData.push([character.stat, parseInt(character.count)]);
+      });
+
+      this.setState({characterData})
+    });
   }
 
   render() {
        return (
           <div>
-             <div><ReactTable
-                    data={this.state.data}
-                    columns={this.columns}
-                    className="-striped -highlight"
-
-                  /></div>
+            <div><ReactTable
+                  data={this.state.data}
+                  columns={this.columns}
+                  className="-striped -highlight"
+                />
+            </div>
           </div>
        )
     }
