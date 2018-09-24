@@ -1,4 +1,6 @@
-#ReactJS App With Docker 
+# ReactJS App With Docker 
+
+Sample ReactJS application which utilizes a REST service to retrieve data and display in ReactTable. The project contains a Dockerfile for running in a containerized environment.
 
 ### Run Application Locally
 
