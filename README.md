@@ -25,3 +25,7 @@ You can now view rental-react-app in the browser.
 Note that the development build is not optimized.
 To create a production build, use npm run build.
 </pre>
+
+Verify application is working
+
+![Alt text](images/image01.jpg?raw=true "Rental React App")
