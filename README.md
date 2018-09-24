@@ -1,4 +1,28 @@
 
+### Run Application Locally
+
+To change the default port, set value in .env file:
+<pre>
+PORT=3009
+</pre>
+
+Run locally
+</pre>
+Johns-MBP:rental-react-app admin$ npm start
+
+Compiled successfully!
+
+You can now view rental-react-app in the browser.
+
+  Local:            http://localhost:3009/
+  On Your Network:  http://192.168.1.175:3009/
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+<pre>
+
+### Run Application In Docker Container
 Build the docker container
 <pre>
 docker build -t rental-react-app . -f ./infrastructure/docker/Dockerfile
