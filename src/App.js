@@ -36,6 +36,27 @@ class App extends Component {
   }
 
   render() {
+    const chartData = {
+    	labels: [
+    		'Red',
+    		'Green',
+    		'Yellow'
+    	],
+    	datasets: [{
+    		data: [300, 50, 100],
+    		backgroundColor: [
+    		'#FF6384',
+    		'#36A2EB',
+    		'#FFCE56'
+    		],
+    		hoverBackgroundColor: [
+    		'#FF6384',
+    		'#36A2EB',
+    		'#FFCE56'
+    		]
+    	}]
+    };
+
     const columns = [{
         id: 'streetNumber',
         Header: 'Street Number',
@@ -75,6 +96,10 @@ class App extends Component {
                   className="-striped -highlight"
                 />
             </div>
+            <div>
+               <h2>Doughnut Example</h2>
+               <Doughnut data={chartData} />
+             </div>
           </div>
        )
     }
