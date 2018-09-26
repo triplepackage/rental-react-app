@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
 import {HorizontalBar} from 'react-chartjs-2';
-import { Navbar, Nav, NavItem, Glyphicon } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Glyphicon, Panel } from 'react-bootstrap';
 import _ from "lodash";
 
 class App extends Component {
@@ -11,7 +11,6 @@ class App extends Component {
 
     this.state = {
       rentalData: [],
-      groupedData: [],
       chartData : []
     };
   }
@@ -36,19 +35,18 @@ class App extends Component {
       });
 
       this.setState({chartData: {
-    labels: chartLabel,
-    datasets: [
-      {
-        label: 'Rentals Per County',
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
-        data: chartData
-      }
-    ]
-  }});
+                      labels: chartLabel,
+                      datasets: [
+                        {
+                          label: 'Rentals Per County',
+                          backgroundColor: 'rgba(255,99,132,0.2)',
+                          borderColor: 'rgba(255,99,132,1)',
+                          borderWidth: 1,
+                          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                          hoverBorderColor: 'rgba(255,99,132,1)',
+                          data: chartData
+                        }]
+                      }});
     });
   }
 
@@ -86,7 +84,7 @@ class App extends Component {
 
        return (
         <div>
-          <div>
+          <div className="page-header">
           <Navbar fixedTop>
                  <Navbar.Header>
                    <Navbar.Brand>
@@ -101,35 +99,40 @@ class App extends Component {
                      <NavItem
                        eventKey={1}
                        href="#">
-                       Home
+                       <Glyphicon glyph="glyphicon glyphicon-home" />
+                       { 'Home'}
                      </NavItem>
                      <NavItem
                        eventKey={2}
                        href="#">
-                       Shop
-                     </NavItem>
-                     <NavItem
-                       eventKey={3}
-                       href="#">
-                       <Glyphicon glyph="shopping-cart" />
-                       {' Cart'}
+                       <Glyphicon glyph="glyphicon glyphicon-cog" />
+                       {' Settings'}
                      </NavItem>
                    </Nav>
                  </Navbar.Collapse>
                </Navbar>
           </div>
-          <div id="content">
-            <div><ReactTable
-                  data={this.state.rentalData}
-                  columns={columns}
-                  className="-striped -highlight"
-                />
-            </div>
-            <div>
-               <h2>Rentals by County</h2>
-               <HorizontalBar data={this.state.chartData} />
-             </div>
-         </div>
+          <div className="jumbotron col-sm-10 col-sm-offset-1">
+              <div>
+                <Panel bsStyle="primary">
+                  <Panel.Heading>Rental Data</Panel.Heading>
+                  <Panel.Body>
+                    <ReactTable
+                        data={this.state.rentalData}
+                        columns={columns}
+                        className="-striped -highlight"
+                      />
+                  </Panel.Body>
+                </Panel>
+                <Panel bsStyle="primary">
+                  <Panel.Heading>Rental Chart</Panel.Heading>
+                  <Panel.Body>
+                    <HorizontalBar data={this.state.chartData} />
+                  </Panel.Body>
+                 </Panel>
+              </div>
+          </div>
+
         </div>
        )
     }
