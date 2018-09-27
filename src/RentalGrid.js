@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
 
-class RentalGrid extends React.Component {
+class RentalGrid extends Component {
   constructor(props) {
     super(props);
 

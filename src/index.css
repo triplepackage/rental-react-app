@@ -3,8 +3,3 @@ body {
   font-weight: 300;
   font-size: 14px;
 }
-
-#content {
-  padding-top: 70px;
-  min-height: ~"calc(100vh - 92px)";
-}

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 
-class RentalBarChart extends React.Component {
+class RentalBarChart extends Component {
   constructor(props) {
     super(props);
 

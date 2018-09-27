@@ -4,6 +4,7 @@ import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-do
 import { Navbar, Nav, NavItem, Glyphicon, Panel } from 'react-bootstrap';
 import _ from "lodash";
 import RentalBarChart from './RentalBarChart';
+import RentalDonut from './RentalDonut';
 import RentalGrid from './RentalGrid';
 
 function NavLinks() {
@@ -25,6 +26,9 @@ function NavLinks() {
              </NavItem>
              <NavItem>
                <NavLink to="/barchart" className="link">Bar Chart</NavLink>
+             </NavItem>
+             <NavItem>
+               <NavLink to="/donutchart" className="link">Donut Chart</NavLink>
              </NavItem>
            </Nav>
          </Navbar.Collapse>
@@ -49,6 +53,7 @@ class App extends Component {
                             <Route exact={ true } path="/" component={ RentalGrid }/>
                             <Route path="/datagrid" component={ RentalGrid }/>
                             <Route path="/barchart" component={ RentalBarChart }/>
+                            <Route path="/donutchart" component={ RentalDonut }/>
                             <Route render={ () => <h1>404 Error</h1> } />
                         </Switch>
                       </Panel.Body>
