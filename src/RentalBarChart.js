@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 
 class RentalBarChart extends React.Component {
@@ -20,8 +20,8 @@ class RentalBarChart extends React.Component {
 
       characters.forEach(function(character) {
         if(character.count > 100){
-        chartData.push([parseInt(character.count)]);
-        chartLabel.push([character.stat]);
+        chartData.push(parseInt(character.count));
+        chartLabel.push(character.stat);
       }
       });
 

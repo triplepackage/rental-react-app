@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
-import { BrowserRouter as Router, NavLink, Route, Switch, Redirect, Prompt } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
 import { Navbar, Nav, NavItem, Glyphicon, Panel } from 'react-bootstrap';
 import _ from "lodash";
 import RentalBarChart from './RentalBarChart';
@@ -12,16 +11,14 @@ function NavLinks() {
       <Navbar fixedTop>
          <Navbar.Header>
            <Navbar.Brand>
-             <a href="/">
-               Baltimore County Rental Portal
-             </a>
+             Baltimore County Rental Portal
            </Navbar.Brand>
            <Navbar.Toggle />
          </Navbar.Header>
          <Navbar.Collapse>
            <Nav pullRight>
              <NavItem>
-               <NavLink exact to="/datagrid" className="link" activeClassName="active">Home</NavLink>
+               <NavLink exact to="/datagrid" className="link">Home</NavLink>
              </NavItem>
              <NavItem>
                <NavLink to="/datagrid" className="link">Data Grid</NavLink>
@@ -36,10 +33,6 @@ function NavLinks() {
 }
 
 class App extends Component {
-  constructor() {
-      super();
-  }
-
   render() {
       return (
         <Router>
