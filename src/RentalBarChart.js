@@ -30,11 +30,11 @@ class RentalBarChart extends Component {
                       datasets: [
                         {
                           label: 'Rentals Per County',
-                          backgroundColor: 'rgba(255,99,132,0.2)',
-                          borderColor: 'rgba(255,99,132,1)',
+                          backgroundColor: '#36A2EB',
+                          borderColor: '#36A2FB',
                           borderWidth: 1,
-                          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                          hoverBorderColor: 'rgba(255,99,132,1)',
+                          hoverBackgroundColor: '#3FA2EB',
+                          hoverBorderColor: '#3FF2EB',
                           data: chartData
                         }]
                       }});

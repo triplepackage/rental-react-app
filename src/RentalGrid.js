@@ -34,6 +34,11 @@ class RentalGrid extends Component {
           accessor: d => d.city
         },
         {
+          id: 'zipCode',
+          Header: 'Zip Code',
+          accessor: d => d.zipCode
+        },
+        {
           id: 'issueDate',
           Header: 'Issue Date',
           accessor: d => d.issueDate

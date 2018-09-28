@@ -22,13 +22,13 @@ function NavLinks() {
                <NavLink exact to="/datagrid" className="link">Home</NavLink>
              </NavItem>
              <NavItem>
-               <NavLink to="/datagrid" className="link">Data Grid</NavLink>
+               <NavLink to="/datagrid">Rental Data</NavLink>
              </NavItem>
              <NavItem>
-               <NavLink to="/barchart" className="link">Bar Chart</NavLink>
+               <NavLink to="/barchart">Rentals by City</NavLink>
              </NavItem>
              <NavItem>
-               <NavLink to="/donutchart" className="link">Donut Chart</NavLink>
+               <NavLink to="/donutchart">Rentals by Status</NavLink>
              </NavItem>
            </Nav>
          </Navbar.Collapse>
@@ -44,22 +44,21 @@ class App extends Component {
               <div className="page-header">
                 <NavLinks />
               </div>
-
-                  <div className="jumbotron col-sm-10 col-sm-offset-1">
-                    <Panel bsStyle="primary">
-                      <Panel.Heading>Rental Data</Panel.Heading>
-                      <Panel.Body>
-                        <Switch>
-                            <Route exact={ true } path="/" component={ RentalGrid }/>
-                            <Route path="/datagrid" component={ RentalGrid }/>
-                            <Route path="/barchart" component={ RentalBarChart }/>
-                            <Route path="/donutchart" component={ RentalDonut }/>
-                            <Route render={ () => <h1>404 Error</h1> } />
-                        </Switch>
-                      </Panel.Body>
-                    </Panel>
-                  </div>
-            </div>
+              <div className="jumbotron col-sm-10 col-sm-offset-1">
+                <Panel bsStyle="primary">
+                  <Panel.Heading>Rental Data</Panel.Heading>
+                  <Panel.Body>
+                    <Switch>
+                        <Route exact={ true } path="/" component={ RentalGrid }/>
+                        <Route path="/datagrid" component={ RentalGrid }/>
+                        <Route path="/barchart" component={ RentalBarChart }/>
+                        <Route path="/donutchart" component={ RentalDonut }/>
+                        <Route render={ () => <h1>404 Error</h1> } />
+                    </Switch>
+                  </Panel.Body>
+                </Panel>
+              </div>
+          </div>
         </Router>
       );
   }
