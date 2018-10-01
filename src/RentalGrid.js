@@ -1,14 +1,35 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
+import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
 
 class RentalGrid extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      rentalData: []
+      rentalData: [],
+      data: [],
+      showModal: false
     };
+  }
+
+  onRowClick = (state, rowInfo) => {
+    return {
+        onClick: e => {
+            console.log('A Tr Element was clicked!');
+            console.log(rowInfo.original);
+            this.setState({
+                data: rowInfo.original,
+                showModal: true
+            });
+            this.props.history.push({
+            pathname: '/rentalform',
+            search: '?recordId=' + rowInfo.original['recordId'],
+            state: { detail: rowInfo.original }
+          })
+        }
+    }
   }
 
   componentDidMount() {
@@ -56,10 +77,11 @@ class RentalGrid extends Component {
 
         return (
           <ReactTable
-                      data={this.state.rentalData}
-                      columns={columns}
-                      className="-striped -highlight"
-                    />
+              getTrProps={this.onRowClick}
+              data={this.state.rentalData}
+              columns={columns}
+              className="-striped -highlight"
+            />
         );
     }
 }

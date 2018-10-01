@@ -6,6 +6,7 @@ import _ from "lodash";
 import RentalBarChart from './RentalBarChart';
 import RentalDonut from './RentalDonut';
 import RentalGrid from './RentalGrid';
+import RentalForm from './RentalForm';
 
 function NavLinks() {
     return(
@@ -53,6 +54,7 @@ class App extends Component {
                         <Route path="/datagrid" component={ RentalGrid }/>
                         <Route path="/barchart" component={ RentalBarChart }/>
                         <Route path="/donutchart" component={ RentalDonut }/>
+                        <Route path="/rentalform"  component={ RentalForm }/>
                         <Route render={ () => <h1>404 Error</h1> } />
                     </Switch>
                   </Panel.Body>
