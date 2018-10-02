@@ -19,16 +19,16 @@ function NavLinks() {
          </Navbar.Header>
          <Navbar.Collapse>
            <Nav pullRight>
-             <NavItem>
+             <NavItem componentClass='span'>
                <NavLink exact to="/datagrid" className="link">Home</NavLink>
              </NavItem>
-             <NavItem>
+             <NavItem componentClass='span'>
                <NavLink to="/datagrid">Rental Data</NavLink>
              </NavItem>
-             <NavItem>
+             <NavItem componentClass='span'>
                <NavLink to="/barchart">Rentals by City</NavLink>
              </NavItem>
-             <NavItem>
+             <NavItem componentClass='span'>
                <NavLink to="/donutchart">Rentals by Status</NavLink>
              </NavItem>
            </Nav>

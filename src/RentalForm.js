@@ -22,7 +22,6 @@ class RentalForm extends Component {
             type="text"
             value={this.state.rentalData.streetNumber}
             placeholder="Enter text"
-            onChange={this.handleChange}
           />
           <ControlLabel>Street Name</ControlLabel>
           <FormControl
@@ -30,7 +29,6 @@ class RentalForm extends Component {
             type="text"
             value={this.state.rentalData.streetName}
             placeholder="Enter text"
-            onChange={this.handleChange}
           />
           <ControlLabel>City</ControlLabel>
           <FormControl
@@ -38,7 +36,6 @@ class RentalForm extends Component {
             type="text"
             value={this.state.rentalData.city}
             placeholder="Enter text"
-            onChange={this.handleChange}
           />
           <ControlLabel>State</ControlLabel>
           <FormControl
@@ -46,7 +43,6 @@ class RentalForm extends Component {
             type="text"
             value={this.state.rentalData.state}
             placeholder="Enter text"
-            onChange={this.handleChange}
           />
           <ControlLabel>Zip Code</ControlLabel>
           <FormControl
@@ -54,7 +50,6 @@ class RentalForm extends Component {
             type="text"
             value={this.state.rentalData.zipCode}
             placeholder="Enter text"
-            onChange={this.handleChange}
           />
           <ControlLabel>Issue Date</ControlLabel>
           <FormControl
@@ -62,7 +57,6 @@ class RentalForm extends Component {
             type="text"
             value={this.state.rentalData.issueDate}
             placeholder="Enter text"
-            onChange={this.handleChange}
           />
           <ControlLabel>Expiration Date</ControlLabel>
           <FormControl
@@ -70,7 +64,6 @@ class RentalForm extends Component {
             type="text"
             value={this.state.rentalData.expirationDate}
             placeholder="Enter text"
-            onChange={this.handleChange}
           />
           <FormControl.Feedback />
           <HelpBlock>Validation is based on string length.</HelpBlock>

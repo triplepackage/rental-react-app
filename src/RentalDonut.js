@@ -6,7 +6,7 @@ class RentalDonut extends Component {
     super(props);
 
     this.state = {
-      chartData : []
+      chartData: { datasets:[], labels:[] }
     };
   }
 
@@ -51,8 +51,10 @@ class RentalDonut extends Component {
   }
 
   render() {
+    const {chartData} = this.state;
   return (
-    <Doughnut data={this.state.chartData} />
+
+    <Doughnut data={chartData} />
   );}
 }
 
