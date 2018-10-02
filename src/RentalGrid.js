@@ -10,35 +10,35 @@ class RentalGrid extends Component {
     this.state = {
       rentalData: [],
       data: [],
-      showModal: false
+      loading: true
     };
   }
 
   onRowClick = (state, rowInfo) => {
     return {
         onClick: e => {
-            console.log('A Tr Element was clicked!');
-            console.log(rowInfo.original);
             this.setState({
-                data: rowInfo.original,
-                showModal: true
+                data: rowInfo.original
             });
             this.props.history.push({
-            pathname: '/rentalform',
-            search: '?recordId=' + rowInfo.original['recordId'],
-            state: { detail: rowInfo.original }
-          })
+              pathname: '/rentalform',
+              search: '?recordId=' + rowInfo.original['recordId'],
+              state: { detail: rowInfo.original }
+            })
         }
     }
   }
 
   componentDidMount() {
+    this.setState({ loading: true });
     fetch('http://127.0.0.1:8080/api/rentals/city/nottingham')
     .then(response => response.json())
-    .then(data => this.setState({ rentalData: data }));
+    .then(data => this.setState({ rentalData: data, loading: false }));
   }
 
     render() {
+      const { loading, rentalData } = this.state;
+
       const columns = [{
           id: 'streetNumber',
           Header: 'Street Number',
@@ -78,8 +78,9 @@ class RentalGrid extends Component {
         return (
           <ReactTable
               getTrProps={this.onRowClick}
-              data={this.state.rentalData}
+              data={rentalData}
               columns={columns}
+              loading={loading}
               className="-striped -highlight"
             />
         );

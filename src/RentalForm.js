@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
+import { FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 
 class RentalForm extends Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class RentalForm extends Component {
           controlId="formBasicText">
           <ControlLabel>Street Number</ControlLabel>
           <FormControl
+            bsSize="sm"
             type="text"
             value={this.state.rentalData.streetNumber}
             placeholder="Enter text"
@@ -25,6 +26,7 @@ class RentalForm extends Component {
           />
           <ControlLabel>Street Name</ControlLabel>
           <FormControl
+            bsSize="sm"
             type="text"
             value={this.state.rentalData.streetName}
             placeholder="Enter text"
@@ -32,6 +34,7 @@ class RentalForm extends Component {
           />
           <ControlLabel>City</ControlLabel>
           <FormControl
+            bsSize="sm"
             type="text"
             value={this.state.rentalData.city}
             placeholder="Enter text"
@@ -39,6 +42,7 @@ class RentalForm extends Component {
           />
           <ControlLabel>State</ControlLabel>
           <FormControl
+            bsSize="sm"
             type="text"
             value={this.state.rentalData.state}
             placeholder="Enter text"
@@ -46,8 +50,25 @@ class RentalForm extends Component {
           />
           <ControlLabel>Zip Code</ControlLabel>
           <FormControl
+            bsSize="sm"
             type="text"
             value={this.state.rentalData.zipCode}
+            placeholder="Enter text"
+            onChange={this.handleChange}
+          />
+          <ControlLabel>Issue Date</ControlLabel>
+          <FormControl
+            bsSize="sm"
+            type="text"
+            value={this.state.rentalData.issueDate}
+            placeholder="Enter text"
+            onChange={this.handleChange}
+          />
+          <ControlLabel>Expiration Date</ControlLabel>
+          <FormControl
+            bsSize="sm"
+            type="text"
+            value={this.state.rentalData.expirationDate}
             placeholder="Enter text"
             onChange={this.handleChange}
           />
