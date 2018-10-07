@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
 import { Navbar, Nav, NavItem, Glyphicon, Panel } from 'react-bootstrap';
 import _ from "lodash";
@@ -8,7 +7,7 @@ import RentalDonut from './RentalDonut';
 import RentalGrid from './RentalGrid';
 import RentalForm from './RentalForm';
 
-function NavLinks() {
+const NavLinks = () => {
     return(
       <Navbar fixedTop>
          <Navbar.Header>
@@ -19,17 +18,17 @@ function NavLinks() {
          </Navbar.Header>
          <Navbar.Collapse>
            <Nav pullRight>
-             <NavItem componentClass='span'>
+             <NavItem eventKey={1}>
                <NavLink exact to="/datagrid" className="link">Home</NavLink>
              </NavItem>
-             <NavItem componentClass='span'>
-               <NavLink to="/datagrid">Rental Data</NavLink>
+             <NavItem eventKey={2}>
+               <NavLink className="tags" to="/datagrid">Rental Data</NavLink>
              </NavItem>
-             <NavItem componentClass='span'>
+             <NavItem eventKey={3}>
                <NavLink to="/barchart">Rentals by City</NavLink>
              </NavItem>
-             <NavItem componentClass='span'>
-               <NavLink to="/donutchart">Rentals by Status</NavLink>
+             <NavItem eventKey={4}>
+               <NavLink className="tags" to="/donutchart">Rentals by Status</NavLink>
              </NavItem>
            </Nav>
          </Navbar.Collapse>
