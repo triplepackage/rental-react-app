@@ -3,7 +3,7 @@ import ReactTable from "react-table";
 import 'react-table/react-table.css'
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
 
-class RentalGrid extends Component {
+export default class RentalGrid extends Component {
   constructor(props) {
     super(props);
 
@@ -86,5 +86,3 @@ class RentalGrid extends Component {
         );
     }
 }
-
-export default RentalGrid;

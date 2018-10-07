@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Doughnut} from 'react-chartjs-2';
 
-class RentalDonut extends Component {
+export default class  RentalDonut extends Component {
   constructor(props) {
     super(props);
 
@@ -57,5 +57,3 @@ class RentalDonut extends Component {
     <Doughnut data={chartData} />
   );}
 }
-
-export default RentalDonut;

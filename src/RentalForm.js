@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 
-class RentalForm extends Component {
+export default class  RentalForm extends Component {
   constructor(props) {
     super(props);
 
@@ -72,5 +72,3 @@ class RentalForm extends Component {
     );
   }
 }
-
-export default RentalForm;

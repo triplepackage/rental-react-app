@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 
-class RentalBarChart extends Component {
+export default class RentalBarChart extends Component {
   constructor(props) {
     super(props);
 
@@ -45,5 +45,3 @@ class RentalBarChart extends Component {
     <HorizontalBar data={this.state.chartData} />
   );}
 }
-
-export default RentalBarChart;
